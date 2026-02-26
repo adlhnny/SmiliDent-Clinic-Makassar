@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmiliDent Clinic Makassar | Klinik Gigi Estetika & Perawatan Profesional</title>
+
+<meta name="description" content="SmiliDent Clinic Makassar adalah klinik gigi spesialis estetika, scaling, behel, dan whitening. Lokasi strategis dekat Unhas. Reservasi & konsultasi via WhatsApp.">
+<meta name="keywords" content="klinik gigi makassar, dokter gigi makassar, scaling gigi, behel makassar, whitening gigi, klinik gigi unhas">
+<meta name="author" content="SmiliDent Clinic Makassar">
+<meta name="robots" content="index, follow">
+
+<!-- Open Graph (untuk share ke WhatsApp/Facebook) -->
+<meta property="og:title" content="SmiliDent Clinic Makassar | Klinik Gigi Estetika">
+<meta property="og:description" content="Klinik gigi di Makassar: scaling, behel, whitening, dan perawatan gigi profesional. Lokasi dekat Unhas.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://smilident-clinic-makassar.com">
+<meta property="og:image" content="https://smilident-clinic-makassar.com/img/preview.jpg">
+
+<!-- Twitter Card (opsional) -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="SmiliDent Clinic Makassar">
+<meta name="twitter:description" content="Klinik gigi Makassar untuk scaling, behel, whitening, dan perawatan estetika.">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <style>
+        /* =========================================
+           KONFIGURASI WARNA & DASAR (GLOBAL)
+           ========================================= */
+        :root {
+            --primary-color: #0c7a43; /* Hijau Klinik */
+            --accent-color: #f7b500;  
+            --dark-color: #2c3e50;
+            --light-bg: #f9fbff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--light-bg);
+            color: #444;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+        }
+
+        /* =========================================
+           BAGIAN NAVBAR (HEADER)
+           ========================================= */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 8%;
+            background: #fff;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 1.4rem;
+            color: var(--primary-color);
+            line-height: 1;
+        }
+
+        .logo span {
+            font-size: 0.8rem;
+            color: #777;
+            display: block;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        nav a {
+            margin-left: 20px;
+            text-decoration: none;
+            color: var(--dark-color);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: 0.3s;
+        }
+
+        nav a:hover { color: var(--primary-color); }
+
+        nav .btn-kontak {
+            background: var(--primary-color);
+            color: #fff;
+            padding: 10px 22px;
+            border-radius: 5px;
+            margin-left: 15px;
+        }
+
+        /* =========================================
+           BAGIAN HERO SECTION (BANNER ATAS)
+           ========================================= */
+        .hero {
+            height: 70vh;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+                        url('https://images.unsplash.com/photo-1598256989800-fe5f95da9787?q=80&w=2070');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+        }
+
+        .hero-content { max-width: 800px; padding: 0 20px; }
+        .hero-content h1 { font-size: 3rem; margin-bottom: 20px; }
+
+        /* PERBAIKAN SPASI: Memberikan jarak antara teks P dan tombol */
+        .hero-content p { 
+            font-size: 1.1rem;
+            margin-bottom: 35px; /* Spasi ditingkatkan agar tidak mepet */
+            font-weight: 300;
+        }
+
+        .btn-main {
+            padding: 15px 40px;
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.4s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        /* =========================================
+           BAGIAN DETAIL LAYANAN (TABS SYSTEM)
+           ========================================= */
+        .section-padding { padding: 60px 8%; }
+        .section-title { text-align: center; margin-bottom: 40px; }
+        .section-title h2 { font-size: 2.2rem; color: var(--dark-color); }
+        .section-title span { color: var(--primary-color); }
+
+        .tabsWrap {
+            background: #fff;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .tabs { display: flex; background: #f1f5f9; }
+
+        .tab {
+            flex: 1;
+            padding: 20px;
+            text-align: center;
+            cursor: pointer;
+            font-weight: 600;
+            color: #64748b;
+            transition: 0.3s;
+        }
+
+        .tab.active {
+            background: #fff;
+            color: var(--primary-color);
+            border-top: 4px solid var(--primary-color);
+        }
+
+        .tabPanels { padding: 40px; }
+        .panel { display: none; animation: fadeIn 0.4s ease; }
+        .panel.active { display: block; }
+
+        /* STYLE PRICELIST DALAM TAB */
+        .serviceRow {
+            display: flex;
+            align-items: center;
+            padding: 20px;
+            border: 1px solid #f1f5f9;
+            border-radius: 12px;
+            margin-bottom: 15px;
+            transition: 0.3s;
+        }
+
+        .thumb {
+            width: 90px; height: 90px;
+            background: var(--primary-color);
+            color: #fff; border-radius: 10px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 11px; text-align: center; font-weight: 700;
+            margin-right: 20px;
+        }
+
+        .green { color: #16a34a; font-size: 1.1rem; margin-left: 10px; }
+
+        /* =========================================
+           BAGIAN LOKASI & KONTAK
+           ========================================= */
+        .contact-container { display: flex; gap: 50px; flex-wrap: wrap; }
+        .map-box { flex: 2; min-width: 300px; }
+        .info-box { 
+            flex: 1; min-width: 300px; background: #fff; 
+            padding: 40px; border-radius: 15px; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05); 
+        }
+
+        /* =========================================
+           BAGIAN FOOTER & WA FLOAT
+           ========================================= */
+            footer { 
+            background: #111; 
+            color: #fff; 
+            padding: 40px 0; 
+            text-align: center; 
+            margin-top: 50px; 
+            width: 100%; 
+        }
+
+        .footer-inner { 
+            max-width: 1200px; 
+            margin: 0 auto; 
+            padding: 0 8%;
+        }
+        .wa-float { position: fixed; bottom: 30px; right: 30px; background: #25d366; width: 60px; height: 60px; border-radius: 50%; display: flex; justify-content: center; align-items: center; z-index: 1000; }
+
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+        @media (max-width: 768px) {
+            .contact-container { flex-direction: column; }
+            .hero-content h1 { font-size: 2.2rem; }
+        }
+
+        /* ===== NAV HIGHLIGHT SLIDER ===== */
+        nav {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-item {
+            position: relative;
+            padding: 10px 16px;
+            border-radius: 8px;
+            z-index: 1;
+        }
+
+        .nav-highlight {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            height: 40px;
+            background: var(--primary-color);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            z-index: 0;
+            opacity: 0;
+        }
+
+        /* ===== ANIMASI KLIK MENU ===== */
+        .nav-item {
+            transition: transform 0.15s ease, color 0.2s ease;
+        }
+
+        .nav-item:active {
+            transform: scale(0.92);
+        }
+
+        /* Menu aktif (yang diklik) */
+        .nav-item.active {
+            color: #fff !important;
+        }
+        /* =========================================
+        GALLERY SLIDER
+        ========================================= */
+        .gallery-section {
+            padding: 60px 8%;
+            background: #f9fbff;
+        }
+
+        .gallery-wrapper {
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            background: #000;
+        }
+
+        .gallery-slider {
+            display: flex;
+            transition: transform 0.6s ease;
+        }
+
+        .gallery-slide {
+            min-width: 100%;
+        }
+
+        .gallery-slide img {
+            width: 100%;
+            height: 450px;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Tombol prev/next */
+        .gallery-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(12,122,67,0.85);
+            color: #fff;
+            border: none;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 20px;
+            font-weight: bold;
+            z-index: 2;
+        }
+
+        .gallery-btn:hover {
+            background: var(--primary-color);
+        }
+
+        .gallery-btn.prev { left: 15px; }
+        .gallery-btn.next { right: 15px; }
+
+        /* Dots indikator */
+        .gallery-dots {
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        .gallery-dots span {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            margin: 0 5px;
+            background: #ccc;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .gallery-dots span.active {
+            background: var(--primary-color);
+        }
+       /* =========================
+        TEAM SECTION
+        ========================= */
+        .team-section {
+            padding: 60px 8%;
+            background: linear-gradient(135deg, var(--light-bg), #e6f2ee); /* nuansa putih-hijau */
+        }
+
+        .team-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .team-title h2 {
+            font-size: 2.2rem;
+            color: var(--dark-color);
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 30px;
+        }
+
+        .team-card {
+            background: #ffffff;
+            border-radius: 18px;
+            padding: 25px 20px 30px;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(44, 62, 80, 0.15); /* pakai tone dark-color */
+            transition: 0.3s;
+            border-top: 5px solid var(--primary-color); /* aksen hijau klinik */
+        }
+
+        .team-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .team-photo-wrap {
+            width: 180px;
+            height: 220px;
+            margin: 0 auto 15px;
+            border-radius: 16px;
+            background: var(--light-bg);
+            padding: 8px;
+            border: 2px solid var(--accent-color); /* aksen kuning */
+        }
+
+        .team-photo-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 12px;
+        }
+
+        .team-name {
+            font-weight: 600;
+            font-size: 1rem;
+            color: var(--dark-color);
+        }
+    </style>
+    
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MedicalBusiness",
+  "name": "SmiliDent Clinic Makassar",
+  "image": "https://smilident-clinic-makassar.com/img/preview.jpg",
+  "url": "https://smilident-clinic-makassar.com",
+  "telephone": "+6285825136923",
+  "priceRange": "$$",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Jl. Perintis KM.10 (Area Kampus Unhas)",
+    "addressLocality": "Makassar",
+    "addressRegion": "Sulawesi Selatan",
+    "postalCode": "90245",
+    "addressCountry": "ID"
+  },
+  "openingHours": "Mo-Su 10:00-22:00",
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": -5.1719,
+    "longitude": 119.3941
+  }
+}
+</script>
+</head>
+
+   <script>
+document.addEventListener("DOMContentLoaded", function () {
+    let currentSlide = 0;
+    const slider = document.getElementById("gallerySlider");
+    const slides = document.querySelectorAll(".gallery-slide");
+    const dotsContainer = document.getElementById("galleryDots");
+
+    if (!slider || slides.length === 0 || !dotsContainer) {
+        console.error("Gallery element tidak ditemukan!");
+        return;
+    }
+
+    // Buat dots
+    slides.forEach((_, index) => {
+        const dot = document.createElement("span");
+        if (index === 0) dot.classList.add("active");
+        dot.addEventListener("click", () => goToSlide(index));
+        dotsContainer.appendChild(dot);
+    });
+
+    const dots = dotsContainer.querySelectorAll("span");
+
+    function updateSlider() {
+        slider.style.transform = "translateX(" + (-currentSlide * 100) + "%)";
+        dots.forEach(dot => dot.classList.remove("active"));
+        dots[currentSlide].classList.add("active");
+    }
+
+    window.nextSlide = function () {
+        currentSlide = (currentSlide + 1) % slides.length;
+        updateSlider();
+    }
+
+    window.prevSlide = function () {
+        currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+        updateSlider();
+    }
+
+    function goToSlide(index) {
+        currentSlide = index;
+        updateSlider();
+    }
+
+    // Auto slide tiap 3 detik
+    setInterval(nextSlide, 3000);
+});
+</script>
+<body>
+
+    <a href="https://wa.me/6285825136923" class="wa-float" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" width="35" alt="WA">
+    </a>
+
+    <header>
+        <div class="logo">SmiliDent <span>Clinic Makassar</span></div>
+        <nav>
+        <nav id="mainNav"> 
+        <div class="nav-highlight" id="navHighlight"></div>
+
+        <a href="#" class="nav-item">Home</a>
+        <a href="#detail" class="nav-item">Info Layanan</a>
+        <a href="#gallery" class="nav-item">Galeri</a>
+        <a href="#lokasi" class="nav-item">Lokasi</a>
+        <a href="#team" class="nav-item">Tim</a>
+
+        <a href="javascript:void(0)" onclick="klikReservasi()" class="btn-kontak">Reservasi</a>
+    </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Spesialis Estetika Gigi Makassar</h1>
+            <p>Perawatan berkualitas dengan harga transparan dan dokter profesional.</p>
+            <a href="javascript:void(0)" class="btn-main" onclick="klikKonsultasi()">Konsultasi Sekarang</a>
+        </div>
+    </section>
+
+    <section id="detail" class="section-padding">
+        <div class="section-title">
+            <h2>Detail <span>Klinik Kami</span></h2>
+        </div>
+
+        <div class="tabsWrap">
+            <div class="tabs">
+                <div class="tab active" onclick="openTab(event, 'fasilitas')">Fasilitas</div>
+                <div class="tab" onclick="openTab(event, 'pricelist')">Pricelist</div>
+                <div class="tab" onclick="openTab(event, 'promo')">Promo</div>
+                <div class="tab" onclick="openTab(event, 'testimoni')">Testimoni</div>
+            </div>
+
+            <div class="tabPanels">
+
+                <!-- ===== FASILITAS ===== -->
+                <div id="fasilitas" class="panel active">
+                    <h3>Kenyamanan Pasien Adalah Prioritas</h3>
+                    <p>Klinik kami dirancang dengan konsep modern dan alat sterilisasi standar medis tinggi untuk menjamin keamanan Anda.</p>
+                    <ul style="margin-top:15px; line-height:1.8;">
+                        <li>✔ Welcome Drink & Free Wi-Fi</li>
+                        <li>✔ Ruang Tunggu Estetik & Cozy</li>
+                        <li>✔ Ruang Bermain Anak</li>
+                        <li>✔ Teknologi Intra Oral Camera (Lihat kondisi gigi di layar)</li>
+                        <li>✔ Dokter Spesialis Berpengalaman</li>
+                        <li>✔ Opsi Pembayaran Cicilan 0%</li>
+                    </ul>
+                </div>
+
+                <!-- ===== PRICELIST ===== -->
+                <div id="pricelist" class="panel">
+
+                    <div class="serviceRow">
+                        <div class="thumb">SCALING<br>GIGI</div>
+                        <div>
+                            <b>6 in 1 Signature Scaling (Pembersihan Karang)</b><br>
+                            <small>Normal: <s>Rp 480.000</s></small>
+                            <span class="green"><b> Rp 199.000</b></span>
+                        </div>
+                    </div>
+
+                    <div class="serviceRow">
+                        <div class="thumb">BEHEL<br>METAL</div>
+                        <div>
+                            <b>Pemasangan Behel Metal USA (Atas & Bawah)</b><br>
+                            <small>Normal: <s>Rp 5.500.000</s></small>
+                            <span class="green"><b> Rp 1.999.000</b></span>
+                        </div>
+                    </div>
+
+                    <div class="serviceRow">
+                        <div class="thumb">WHITENING<br>GIGI</div>
+                        <div>
+                            <b>Dental Whitening / Bleaching (Gigi Putih Instan)</b><br>
+                            <small>Normal: <s>Rp 3.500.000</s></small>
+                            <span class="green"><b> Rp 1.450.000</b></span>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- ===== PROMO ===== -->
+                <div id="promo" class="panel">
+                    <h3>Promo Bulan Ini</h3>
+
+                    <div style="display:grid; grid-template-columns: repeat(auto-fit,minmax(200px,1fr)); gap:20px; margin-top:20px;">
+                        <div style="padding:25px; border-radius:12px; background:#fff7e6; border:1px dashed #f7b500; text-align:center; font-weight:600;">
+                            Siswa & Mahasiswa<br>DISKON 10%
+                        </div>
+                        <div style="padding:25px; border-radius:12px; background:#f0fdf4; border:1px dashed #22c55e; text-align:center; font-weight:600;">
+                            Paket Keluarga<br>(Min 3 Orang)
+                        </div>
+                        <div style="padding:25px; border-radius:12px; background:#fff1f2; border:1px dashed #ef4444; text-align:center; font-weight:600;">
+                            Free Konsultasi<br>Hari Jumat
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ===== TESTIMONI ===== -->
+                <div id="testimoni" class="panel">
+                    <h3>Apa Kata Mereka?</h3>
+                    <blockquote style="margin-top:20px; padding-left:20px; border-left:4px solid var(--primary-color); font-style:italic;">
+                        "Tempatnya bersih banget, dokternya sabar jelasin detail. Scalingnya nggak sakit sama sekali. Harga jujur sesuai di pricelist."
+                    </blockquote>
+                    <p style="margin-top:10px; color: var(--primary-color); font-weight:600;">
+                        — Kak Musaril, Makassar
+                    </p>
+                </div>
+
+            </div>
+        </div>
+        <section id="gallery" class="gallery-section">
+    <div class="section-title">
+        <h2>Galeri <span>Klinik Kami</span></h2>
+    </div>
+
+    <div class="gallery-wrapper">
+        <button class="gallery-btn prev" onclick="prevSlide()">‹</button>
+        <button class="gallery-btn next" onclick="nextSlide()">›</button>
+
+        <div class="gallery-slider" id="gallerySlider">
+            <div class="gallery-slide">
+                <img src="img/DU.jpeg" alt="Ruang Klinik">
+            </div>
+            <div class="gallery-slide">
+                <img src="img/Resepsionis.jpeg" alt="Resepsionis">
+            </div>
+            <div class="gallery-slide">
+                <img src="img/RuangTunggu.jpeg" alt="Ruang Tunggu">
+            </div>
+            <div class="gallery-slide">
+                <img src="img/RuangAnak.jpeg" alt="Ruang Anak">
+            </div>
+        </div>
+    </div>
+
+    <div class="gallery-dots" id="galleryDots"></div>
+</section>
+  
+</section>
+
+    <section id="lokasi" class="section-padding" style="background: #fff;">
+        <div class="section-title">
+            <h2>Lokasi <span>Strategis</span></h2>
+        </div>
+        <div class="contact-container">
+            <div class="map-box">
+                <iframe
+                    src="https://www.google.com/maps?q=Universitas+Hasanuddin&output=embed"
+                    width="100%"
+                    height="400"
+                    style="border:0; border-radius: 15px;"
+                    allowfullscreen=""
+                    loading="lazy">
+                </iframe>
+            </div>
+            <div class="info-box">
+                <h4>Alamat</h4>
+                <p>Jl. Perintis KM.10 (Area Kampus Unhas), Makassar</p><br>
+                <h4>Jam Praktik</h4>
+                <p>10.00 - 22.00 WITA</p><br>
+                <button class="btn-main" style="width: 100%;" onclick="klikAntrean()">Ambil Antrean</button>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function openTab(evt, tabName) {
+            var i, panel, tab;
+            panel = document.getElementsByClassName("panel");
+            for (i = 0; i < panel.length; i++) { panel[i].classList.remove("active"); }
+            tab = document.getElementsByClassName("tab");
+            for (i = 0; i < tab.length; i++) { tab[i].classList.remove("active"); }
+            document.getElementById(tabName).classList.add("active");
+            evt.currentTarget.classList.add("active");
+        }
+    </script>
+
+    <script>
+    const WA_NUMBER = "6285825136923";
+
+    function waLink(pesan) {
+    const url = "https://wa.me/" + WA_NUMBER + "?text=" + encodeURIComponent(pesan);
+    window.open(url, "_blank");
+    }
+
+    function klikReservasi() {
+    // Reservasi = Ambil Antrean
+    waLink("Halo SmiliDent, saya ingin *reservasi / ambil antrean* untuk perawatan gigi.");
+    }
+
+    function klikAntrean() {
+    waLink("Halo SmiliDent, saya ingin *ambil antrean* untuk perawatan gigi.");
+    }
+
+    function klikKonsultasi() {
+    waLink("Halo SmiliDent, saya ingin *konsultasi* tentang perawatan gigi.");
+    }
+    </script>
+
+    <script>
+    const nav = document.getElementById("mainNav");
+    const highlight = document.getElementById("navHighlight");
+    const items = nav.querySelectorAll(".nav-item");
+
+    let activeItem = null;
+
+    function moveHighlight(item) {
+        const rect = item.getBoundingClientRect();
+        const navRect = nav.getBoundingClientRect();
+
+        highlight.style.width = rect.width + "px";
+        highlight.style.left = (rect.left - navRect.left) + "px";
+        highlight.style.opacity = "1";
+    }
+
+    // Hover effect
+    items.forEach(item => {
+        item.addEventListener("mouseenter", () => {
+            moveHighlight(item);
+
+            items.forEach(i => i.style.color = "#2c3e50");
+            item.style.color = "#fff";
+        });
+
+        // Klik effect (jadi aktif)
+        item.addEventListener("click", () => {
+            if (activeItem) activeItem.classList.remove("active");
+            item.classList.add("active");
+            activeItem = item;
+
+            moveHighlight(item);
+        });
+    });
+
+    // Saat mouse keluar navbar
+    nav.addEventListener("mouseleave", () => {
+        if (activeItem) {
+            moveHighlight(activeItem);
+            items.forEach(i => i.style.color = "#2c3e50");
+            activeItem.style.color = "#fff";
+        } else {
+            highlight.style.opacity = "0";
+            items.forEach(i => i.style.color = "#2c3e50");
+        }
+    });
+    </script>
+    <section class="team-section" id="team">
+    <div class="team-title">
+        <h2>Kelompok 6</h2>
+    </div>
+
+    <div class="team-grid">
+
+        <div class="team-card">
+            <div class="team-photo-wrap">
+                <img src="foto/radina.jpeg" alt="Radina Amaliah Ramli">
+            </div>
+            <div class="team-name">Radina Amaliah Ramli</div>
+        </div>
+
+        <div class="team-card">
+            <div class="team-photo-wrap">
+                <img src="foto/dila.jpeg" alt="Siti Adhylah Umihany Polanunu">
+            </div>
+            <div class="team-name">Siti Adhylah Umihany Polanunu</div>
+        </div>
+
+        <div class="team-card">
+            <div class="team-photo-wrap">
+                <img src="foto/kiya.jpeg" alt="Andi Zaskiya Ilham">
+            </div>
+            <div class="team-name">Andi Zaskiya Ilham</div>
+        </div>
+
+        <div class="team-card">
+            <div class="team-photo-wrap">
+                <img src="foto/qela.jpeg" alt="Aqelah Resty Amaliah">
+            </div>
+            <div class="team-name">Aqelah Resty Amaliah</div>
+        </div>
+
+        <div class="team-card">
+            <div class="team-photo-wrap">
+                <img src="foto/musaril.jpeg" alt="Musaril">
+            </div>
+            <div class="team-name">Musaril</div>
+        </div>
+
+        <div class="team-card">
+            <div class="team-photo-wrap">
+                <img src="foto/wesly.jpeg" alt="Wesly Sirenden">
+            </div>
+            <div class="team-name">Wesly Sirenden</div>
+        </div>
+
+        <div class="team-card">
+            <div class="team-photo-wrap">
+                <img src="foto/thomas.jpeg" alt="Thomas Kwaito">
+            </div>
+            <div class="team-name">Thomas Kwaito</div>
+        </div>
+
+    </div>
+    </section>
+  <footer>
+    <div class="footer-inner">
+        <p>© 2026 SmiliDent Clinic Makassar.</p>
+    </div>
+</footer>
+</body>
+</html>
